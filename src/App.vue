@@ -21,7 +21,7 @@
       <footer>
         <ul class="socials">
           <li v-for="social in socials" :key="social.title">
-            <a :href="social.url" target="_blank" :title="`${social.title} Profile`" v-html="getSocialIcon(social.title)" />
+            <a :href="social.url" target="_blank" :title="`${social.title} Profile`" rel="noopener" v-html="getSocialIcon(social.title)" />
           </li>
         </ul>
       </footer>
