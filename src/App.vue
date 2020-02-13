@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <a href="/" class="logo" v-html="require('./assets/logo.svg')" />
+    <a href="/" class="logo" title="Logo - dvL monogram" v-html="require('./assets/logo.svg')" />
 
     <section>
       <header>
@@ -21,7 +21,7 @@
       <footer>
         <ul class="socials">
           <li v-for="social in socials" :key="social.title">
-            <a :href="social.url" target="_blank" v-html="getSocialIcon(social.title)" />
+            <a :href="social.url" target="_blank" :title="`${social.title} Profile`" v-html="getSocialIcon(social.title)" />
           </li>
         </ul>
       </footer>
