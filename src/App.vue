@@ -74,6 +74,8 @@
 
 <style>
   body {
+    background-color: #fff;
+    color: #000;
     margin: 0;
   }
 
@@ -82,7 +84,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #000;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -152,5 +153,16 @@
 
   .socials svg {
     height: 1rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+
+    a svg {
+      fill: #fff;
+    }
   }
 </style>
