@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    #favicon {
+      --favicon-fill: #000;
+      fill: var(--favicon-fill);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #favicon {
+        --favicon-fill: #fff;
+      }
+    }
+  </style>
+
+  <path id="favicon" d="M30.36,19.34l-11.75,3.04l0.23-0.73l6.39-20.39l-9.24,20.27l-2.49-5.41l-0.35-0.78l1.61-3.54l-1.94,2.8
+	l-0.31-0.68L6.68,1.27l4.57,14.46l0.25,0.78L1.64,30.73l12.75-5.06l0.2,0.62l1.4,4.45l1.79-5.72l0.25-0.79L30.36,19.34z M8.8,24.92
+	l3.16-6.96l0.29,0.92l1.31,4.14l0.2,0.62L8.8,24.92z"/>
+</svg>
