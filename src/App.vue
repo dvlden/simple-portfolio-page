@@ -30,6 +30,8 @@
 </template>
 
 <script>
+  const socialHandle = 'dvlden'
+
   export default {
     name: 'App',
 
@@ -37,27 +39,27 @@
       return {
         socials: [
           {
-            url: '//twitter.com/dvlden',
+            url: `//twitter.com/${socialHandle}`,
             title: 'Twitter'
           },
           {
-            url: '//www.linkedin.com/in/dvlden/',
+            url: `//www.linkedin.com/in/${socialHandle}/`,
             title: 'LinkedIn'
           },
           {
-            url: '//github.com/dvlden',
+            url: `//github.com/${socialHandle}`,
             title: 'GitHub'
           },
           {
-            url: '//dribbble.com/dvlden',
+            url: `//dribbble.com/${socialHandle}`,
             title: 'Dribbble'
           },
           {
-            url: '//stackexchange.com/users/1355202/dvlden',
+            url: `//stackexchange.com/users/1355202/${socialHandle}`,
             title: 'Stack Overflow'
           },
           {
-            url: '//medium.com/@dvlden',
+            url: `//medium.com/@${socialHandle}`,
             title: 'Medium'
           }
         ]
@@ -72,10 +74,18 @@
   }
 </script>
 
-<style>
+<style lang="scss">
+  :root {
+    --color-dark: #000;
+    --color-light: #fff;
+  }
+
   body {
-    background-color: #fff;
-    color: #000;
+    --body-background: var(--color-light);
+    --body-color: var(--color-dark);
+
+    background-color: var(--body-background);
+    color: var(--body-color);
     margin: 0;
   }
 
@@ -94,34 +104,32 @@
   }
 
   a {
+    --link-fill: var(--color-dark);
+
     display: inline-flex;
     justify-content: center;
     align-items: center;
     border-radius: .2rem;
-  }
 
-  a:focus {
-    outline: 0;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, .2);
-  }
-
-  @media (hover: hover) {
-    a svg {
-      will-change: fill;
-      transition: fill .2s ease;
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, .2);
     }
 
-    a svg:hover {
-      fill: #666;
+    @media (hover: hover) {
+      svg {
+        fill: var(--link-fill);
+        will-change: opacity;
+        transition: opacity .2s ease;
+
+        &:hover {
+          opacity: .5;
+        }
+      }
     }
   }
 
-  svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .logo {
+  .logo svg {
     width: 128px;
     height: 128px;
   }
@@ -131,38 +139,39 @@
   }
 
   em {
-    color: #666;
+    opacity: .5;
   }
 
   .socials {
-    all: unset;
+    padding-left: 0;
+    margin-bottom: 0;
     list-style-type: none;
     display: flex;
     justify-content: center;
-  }
 
-  .socials > li:not(:last-child) {
-    margin-right: .5rem;
-  }
+    li:not(:last-child) {
+      margin-right: .5rem;
+    }
 
-  .socials a {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-  }
+    a {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+    }
 
-  .socials svg {
-    height: 1rem;
+    svg {
+      height: 1rem;
+    }
   }
 
   @media (prefers-color-scheme: dark) {
     body {
-      background-color: #000;
-      color: #fff;
+      --body-background: var(--color-dark);
+      --body-color: var(--color-light);
     }
 
     a svg {
-      fill: #fff;
+      --link-fill: var(--color-light);
     }
   }
 </style>
