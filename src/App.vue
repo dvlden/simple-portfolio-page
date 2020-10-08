@@ -76,16 +76,16 @@
 
 <style lang="scss">
   :root {
-    --color-dark: #000;
-    --color-light: #fff;
+    --color-dark: 0, 0%, 0%;
+    --color-light: 0, 0%, 100%;
   }
 
   body {
-    --body-background: var(--color-light);
-    --body-color: var(--color-dark);
+    --body-background: hsl(var(--color-light));
+    --body-color: hsl(var(--color-dark));
 
-    background-color: var(--body-background);
-    color: var(--body-color);
+    background-color: hsl(var(--body-background));
+    color: hsl(var(--body-color));
     margin: 0;
   }
 
@@ -104,7 +104,8 @@
   }
 
   a {
-    --link-fill: var(--color-dark);
+    --link-fill: hsl(var(--color-dark));
+    --link-focus: hsla(var(--color-dark), .2);
 
     display: inline-flex;
     justify-content: center;
@@ -113,7 +114,7 @@
 
     &:focus {
       outline: 0;
-      box-shadow: 0 0 0 2px rgba(0, 0, 0, .2);
+      box-shadow: 0 0 0 2px var(--link-focus);
     }
 
     @media (hover: hover) {
@@ -170,8 +171,12 @@
       --body-color: var(--color-light);
     }
 
+    a {
+      --link-focus: hsla(var(--color-light), .2);
+    }
+
     a svg {
-      --link-fill: var(--color-light);
+      --link-fill: hsl(var(--color-light));
     }
   }
 </style>
